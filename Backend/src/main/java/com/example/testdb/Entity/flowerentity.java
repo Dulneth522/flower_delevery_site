@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class flowerentity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "flower_id")
     private Long id;
 
