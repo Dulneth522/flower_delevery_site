@@ -1,0 +1,6 @@
+.mobilebutton{
+    border: 2px solid black;
+    border-radius: 10px;
+    column-gap: 5px;
+    margin: 6px;
+}

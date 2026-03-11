@@ -1,0 +1,21 @@
+.mainconact{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.contactinputs {
+  width: 420px;            
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.message {
+  width: 100%;  
+  height: 120px;       
+  padding: 10px;
+  font-size: 16px;
+}
+.message:focus{
+    height: 80px;
+}

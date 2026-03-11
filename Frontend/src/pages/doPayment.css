@@ -1,0 +1,211 @@
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff0f3;
+    padding: 40px 20px;
+}
+
+.payment-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.payment-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ff4d6d; /* Flower bouquet තේමාවට ගැලපෙන පාටක් */
+}
+
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff0f3;
+    padding: 20px;
+}
+
+.payment-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #ff4d6d;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.payment-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.delivery-section {
+    margin-bottom: 25px;
+}
+
+.section-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.delivery-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.option-btn {
+    padding: 15px;
+    border: 2px solid #f8d7da;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.option-btn.active {
+    background: #ff4d6d;
+    color: white;
+    border-color: #ff4d6d;
+}
+
+.option-btn:hover {
+    border-color: #ff4d6d;
+}
+
+.option-btn.active {
+    background-color: #ff4d6d;
+    color: white;
+    border-color: #ff4d6d;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.pay-btn:hover {
+    background-color: #c9184a;
+}
+@media (max-width: 768px) {
+    .payment-layout {
+        flex-direction: column;
+    }
+}
+.order-summary {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.summary-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.summary-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    color: #c9184a;
+    margin: 20px 0;
+}
+.payment-layout {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+}

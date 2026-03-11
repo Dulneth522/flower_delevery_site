@@ -1,0 +1,39 @@
+
+.mobilenavpart {
+  display: none;
+}
+
+.desktopnavpart {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktopnavpart {
+    display: none;
+  }
+
+  .mobilenavpart {
+    display: block;
+  }
+}
+.mainimage1{
+    width: 100%;
+    height: auto;
+    margin-top: -10px;
+    display: block;
+}
+.mainimage2{
+    width: 100%;
+    height: auto;
+    margin-top: 75px;
+    display: none;
+}
+@media (max-width: 768px) {
+    .mainimage1{
+        display: none;
+    }
+    .mainimage2{
+        display: block;
+    }
+    
+}

@@ -1,0 +1,187 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.mainsininpart {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+}
+
+.connecttologinpage{
+    width: 53%;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: 718px;
+}
+
+
+.signinpart {
+    width: 47%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right,white,rgb(225, 140, 13));
+}
+
+.signinborder {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border: 2px solid black;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px 12px 40px; 
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #fcfcfd;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.bi-person, .bi-file-lock {
+    position: absolute;
+    margin-top: 14px;
+    margin-left: 15px;
+    color: #94a3b8;
+    z-index: 10;
+}
+.bi-eye-slash, .bi-eye-fill{
+    position: absolute;
+    margin-top: 48px;
+    margin-left: -120px;
+    z-index: 10;
+}
+
+button[type="button"] {
+    position: absolute;
+    right: 50px;
+    margin-top: -35px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+div div[style*="width: 304px"] {
+    margin: 0 auto !important;
+}
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+.signinicon {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+   
+}
+
+.signinicon i {
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signinicon i:hover {
+    background-color: #f8fafc;
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.sigintext {
+    font-size: 13px;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.reset-password a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.reset-password a:hover {
+    text-decoration: underline;
+}
+.connecttologinmain{
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.gotosignup{
+    border: 2px solid black;
+    background-color: rgb(198, 234, 198);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    border-radius: 7px;
+    box-shadow: 2px 1px 6px rgb(118, 242, 118);
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: background-color 0.5s ease-out;
+}
+.gotosignup a{
+    text-decoration: none;
+}
+.gotosignup:hover{
+    background-color: rgb(92, 214, 92);
+}
