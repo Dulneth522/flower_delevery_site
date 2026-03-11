@@ -21,11 +21,9 @@ public class customerUserDetailsService implements UserDetailsService {
         customer user = repo.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
 
-        String roleName = user.getRole().replace("ROLE_", "");
-
         return User.withUsername(user.getEmail())
                 .password(user.getPassword())
-                .roles(roleName)
+                .roles("USER")
                 .build();
     }
 }
