@@ -1,89 +1,135 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; 
 import "./Admin.css";
+import { Trash2, LogOut, Home, Info, Phone, PlusCircle, Flower2 } from 'lucide-react';
 
 export default function Admin() {
+  const [flower, setFlower] = useState({ name: "", description: "", price: "", url: "" });
+  const [allFlowers, setAllFlowers] = useState([]); 
+  const navigate = useNavigate();
 
-  const [flower, setFlower] = useState({
-    name: "",
-    description: "",
-    price: "",
-    url: ""
-  });
+  useEffect(() => {
+    fetchFlowers();
+  }, []);
 
-  
+  const fetchFlowers = async () => {
+    try {
+      const res = await axios.get("http://localhost:8080/api/flowers/all");
+      setAllFlowers(res.data);
+    } catch (err) {
+      console.error("Error fetching flowers:", err);
+    }
+  };
+
   const handleChange = (e) => {
     setFlower({ ...flower, [e.target.name]: e.target.value });
   };
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/flowers/add", flower);
-      console.log("Success:", response.data);
-      alert("sucessfully added the flower details!");
-      
-      // Form එක reset කිරීම
+      await axios.post("http://localhost:8080/api/flowers/add", flower);
+      alert("Successfully added!");
       setFlower({ name: "", description: "", price: "", url: "" });
+      fetchFlowers(); 
     } catch (err) {
-      console.error("Error:", err);
-      alert("Error , data not send to the database successfully.!");
+      alert("Error adding data.");
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this flower?")) {
+      try {
+        await axios.delete(`http://localhost:8080/api/flowers/delete/${id}`);
+        alert("Flower Deleted!");
+        fetchFlowers(); 
+      } catch (err) {
+        console.error("Error deleting:", err);
+        alert("Failed to delete the flower.");
+      }
+    }
+  };
+
+  const handleLogout = () => {
+    if (window.confirm("Do you want to logout?")) {
+      navigate("/"); 
     }
   };
 
   return (
-    <div className="admin-container">
-      {/* Sidebar Section */}
+    <div className="admin-wrapper">
+      {/* SIDEBAR */}
       <aside className="admin-sidebar">
         <div className="sidebar-header">
-          <h2>Admin Panel</h2>
+          <Flower2 size={28} color="#4CAF50" />
+          <h2>Admin</h2>
         </div>
         <nav className="sidebar-nav">
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li className="nav-item active"> Dashboard</li>
+            <li><Link to="/" className="nav-link"><Home size={14}/>home</Link></li>
+            <li><Link to="/about" className="nav-link"><Info size={18}/> About Us</Link></li>
+            <li><Link to="/contact" className="nav-link"><Phone size={18}/> Contact Us</Link></li>
           </ul>
         </nav>
-        <div className="sidebar-footer">
-          <button className="logout-btn">Log out</button>
-        </div>
+        <button onClick={handleLogout} className="logout-btn">
+          <LogOut size={18} /> Logout
+        </button>
       </aside>
 
-      {/* Main Content Area */}
+      {/* MAIN CONTENT */}
       <main className="admin-main">
         <header className="admin-topbar">
-          <h1>Dashboard Overview</h1>
-          <div className="user-profile">Admin User</div>
+          <h1>Inventory Management</h1>
+          <div className="admin-badge">Admin Mode</div>
         </header>
 
         <section className="admin-content">
-          <div className="add-flower-section">
-            <h3>Add New Flower Product</h3>
+          {/* Add Form Card */}
+          <div className="card form-card">
+            <h3><PlusCircle size={20} color="#4CAF50"/> Add New Flower</h3>
             <form onSubmit={handleSubmit} className="admin-flower-form">
-              <div className="form-group">
-                <input type="text" name="name" placeholder="Flower Name" value={flower.name} onChange={handleChange} required />
-                <input type="text" name="url" placeholder="Image URL (e.g. rose.jpg)" value={flower.url} onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                <input type="number" name="price" placeholder="Price" value={flower.price} onChange={handleChange} required />
-                <textarea name="description" placeholder="Short Description" value={flower.description} onChange={handleChange} required />
-              </div>
-              <button type="submit" className="save-btn">Save Flower</button>
+               <div className="input-group">
+                 <input type="text" name="name" placeholder="Flower Name" value={flower.name} onChange={handleChange} required />
+                 <input type="number" name="price" placeholder="Price ($)" value={flower.price} onChange={handleChange} required />
+               </div>
+               <input type="text" name="url" placeholder="Image URL" value={flower.url} onChange={handleChange} required />
+               <textarea name="description" placeholder="Short Description" value={flower.description} onChange={handleChange} required />
+               <button type="submit" className="save-btn">Save Product</button>
             </form>
           </div>
 
-          {/* Stats Grid */}
-          <div className="stats-grid">
-            <div className="stat-card">
-              <h3>Total Users</h3>
-              <p className="stat-number">1,250</p>
-            </div>
-            <div className="stat-card">
-              <h3>Revenue</h3>
-              <p className="stat-number">$12,400</p>
+          {/* Table Card */}
+          <div className="card inventory-card">
+            <h3>Flower Inventory ({allFlowers.length})</h3>
+            <div className="table-responsive">
+                <table className="admin-table">
+                <thead>
+                    <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {allFlowers.map((f) => (
+                    <tr key={f.id}>
+                        <td><img src={f.url} alt={f.name} className="table-img" /></td>
+                        <td className="fw-bold">{f.name}</td>
+                        <td className="price-text">${f.price}</td>
+                        <td className="desc-text">{f.description}</td>
+                        <td>
+                            <button onClick={() => handleDelete(f.id)} className="delete-btn" title="Delete Flower">
+                                <Trash2 size={18} />
+                            </button>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+                </table>
             </div>
           </div>
         </section>
