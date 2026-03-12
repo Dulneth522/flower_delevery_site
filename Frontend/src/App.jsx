@@ -9,6 +9,7 @@ import Signup from './pages/Signup.jsx'
 import Contact from './pages/Contact.jsx'
 import DoPayment from './pages/doPayment.jsx';  
 import AddToFlowers from './pages/AddToFlowers.jsx';
+import Delivery from './pages/Delivery.jsx';
 
 function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/admin" element={<Admin/>}/>
         <Route path='/signin' element={<Signin/>}/>
         <Route path='/addTOFlowers' element={<AddToFlowers/>}/>
+        <Route path='/delivery' element={<Delivery cartItems={cartItems} removeFromCart={removeFromCart}/>}/>
         
         <Route path='/about' element={
           <About cartItems={cartItems} removeFromCart={removeFromCart} />

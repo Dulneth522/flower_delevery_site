@@ -4,6 +4,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Upperbar from "../components/Upperbar";
 
 export default function Signup() {
 const [FirstName , setFirstName] = useState("");
@@ -39,6 +40,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
+    <Upperbar/>
       <Navigation />
       <div className="headingsignup">
         <h4>Your Shopping Account</h4>

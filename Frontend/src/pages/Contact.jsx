@@ -4,10 +4,12 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import './Contact.css'
 import Cart from '../components/Cart'
+import Upperbar from '../components/Upperbar'
 
 export default function Contact({addToCart,cartItems,removeFromCart}) {
   return (
     <>
+    <Upperbar/>
     <Navigation cartItems={cartItems} removeFromCart={removeFromCart}/>
     <div className="mainconact">
       <div className="contactpart1">

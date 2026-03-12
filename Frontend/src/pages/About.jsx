@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import './About.css'
 import Cart from '../components/Cart';
+import Upperbar from '../components/Upperbar';
 
 export default function About({ cartItems = [], removeFromCart, addToCart }) {
 
@@ -15,6 +16,7 @@ export default function About({ cartItems = [], removeFromCart, addToCart }) {
 
   return (
     <>
+    <Upperbar/>
     <Navigation cartItems={cartItems} removeFromCart={removeFromCart}/>
       <section className="about-section">
       <div className="about-container">

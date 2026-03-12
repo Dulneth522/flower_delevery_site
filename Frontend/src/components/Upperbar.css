@@ -1,0 +1,85 @@
+.upperbarnav {
+    width: 100%;
+    height: 45px;
+    background-color: #ffc0cb; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+}
+.upperbarnav h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.upperbarnav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.upperbarnav a:hover {
+    color: #d4af37; 
+}
+.main-contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.contact-info, .contact-form-section {
+    flex: 1;
+    min-width: 300px;
+}
+.info-text {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.form-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-input, .contact-textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.submit-button {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
+
+.map-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}

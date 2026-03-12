@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './doPayment.css';
 import Navigation from '../components/Navigation';
+import Upperbar from '../components/Upperbar';
 
 export default function DoPayment({ cartItems = [] }) {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ export default function DoPayment({ cartItems = [] }) {
 
   return (
     <>
+    <Upperbar/>
     <Navigation/>
     <div className="payment-container">
       <div className="payment-layout">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddToFlowers.css';
 import { PlusCircle, Trash2, Send } from 'lucide-react';
+import Upperbar from '../components/Upperbar';
 
 export default function AddToFlowers() {
   const [flower, setFlower] = useState({ name: '', price: '', url: '', description: '' });
@@ -40,6 +41,8 @@ export default function AddToFlowers() {
   };
 
   return (
+    <>
+    <Upperbar/>
     <div className="add-flower-container">
       <div className="header-section">
         <h1>Add New Flower Product</h1>
@@ -98,5 +101,6 @@ export default function AddToFlowers() {
         )}
       </div>
     </div>
+    </>
   );
 }

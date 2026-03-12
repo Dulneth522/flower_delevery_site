@@ -4,9 +4,10 @@ import Verticalnav from "../components/Verticalnav";
 import './Home.css';
 import Cart from "../components/Cart";
 import Footer from "../components/Footer";
+import Upperbar from "../components/Upperbar";
 export default function Home({cartItems, addToCart,removeFromCart}) {
   return (
-    <>
+    <><Upperbar/>
       <div className="desktopnavpart">
         <Navigation cartItems={cartItems} removeFromCart={removeFromCart} />
         <img

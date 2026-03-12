@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import axios from "axios";
+import Upperbar from "../components/Upperbar";
 
 export default function Signin() {
 
@@ -55,6 +56,7 @@ export default function Signin() {
 
   return (
     <>
+    <Upperbar/>
       <Navigation />
 
       <div className="mainsininpart">
