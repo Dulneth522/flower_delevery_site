@@ -22,18 +22,14 @@ public class customercontroller {
         this.customerservice = customerservice;
         this.authService = authService;
     }
-
-    // 🟢 SIGNUP
     @PostMapping("/signup")
     public customer signup(@RequestBody customer customer) {
         return customerservice.savecustomer(customer);
     }
 
-    // 🟢 LOGIN (Using LoginDto for better security)
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginDto loginRequest) {
 
-        // AuthService එකේ තියෙන login logic එක call කරනවා
         boolean isAuthenticated = authService.login(loginRequest);
 
         if (isAuthenticated) {
